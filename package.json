@@ -1,0 +1,26 @@
+{
+  "name": "apinator",
+  "version": "0.0.0",
+  "description": "Easily create and maintain modular APIs for Node.js, based on express",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Zebiano/apinator.git"
+  },
+  "keywords": [
+    "api",
+    "generate-api"
+  ],
+  "author": "Sebastião Barros - @Zebiano",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Zebiano/apinator/issues"
+  },
+  "homepage": "https://github.com/Zebiano/apinator#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.2"
+  }
+}
