@@ -1,6 +1,6 @@
 {
   "name": "apinator",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Easily create and maintain modular APIs for Node.js, based on express",
   "scripts": {
     "dev": "nodemon index.js"
