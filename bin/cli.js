@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 // Requires: Packages
 const minimist = require('minimist');
 
