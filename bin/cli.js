@@ -1,35 +1,59 @@
 #!/usr/bin/env node
+'use strict'
 
 // Requires: Packages
-const minimist = require('minimist');
+const meow = require('meow')
+const clear = require('clear')
+const chalk = require('chalk')
+const updateNotifier = require('update-notifier')
 
-// Requires: Files
+// Requires: Libs
 const inquirer = require('../lib/inquirer')
+const echo = require('../lib/echo')
+
+// Require: Files
+const pkg = require('../package.json')
 
 // Variables
-const argv = minimist(process.argv.slice(2));
-console.log(argv)
-console.log(argv._[0])
+const labelFile = './labels.json'
+const helpText = `
+NAME
+    apinator - NodeJs API manager.
 
-// Command picker
-switch (argv._[0]) {
-    case "create":
-        console.log("Create!")
-        break
-    case "module":
-        console.log("Module!")
-        break
-    default:
-        console.log("Something else...")
-}
+SYNOPSIS
+    apinator [OPTIONS]
+
+DESCRIPTION
+    Easily create and maintain modular APIs for Node.js, based on express.
+
+OPTIONS
+    -c, --create
+        Launch interactive CLI to create a new API.
+
+EXAMPLES
+    Create a new API:
+        apinator create 
+`;
+
+// Meow CLI
+const cli = meow(helpText, {
+    description: false,
+    flags: {
+        'create': {
+            alias: 'c',
+            type: 'boolean'
+        },
+        'module': {
+            alias: 'm',
+            type: 'boolean'
+        }
+    }
+})
+
+/* --- Start --- */
+console.log()
+
+// Update Notifier
+updateNotifier({ pkg }).notify({ isGlobal: true })
 
 /* --- Functions --- */
-// Creates a new API
-function create() {
-    // Hm.
-}
-
-// Exports
-module.exports = {
-    create: create()
-}
