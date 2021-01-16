@@ -2,10 +2,7 @@
 'use strict'
 
 // Requires: Packages
-const meow = require('meow')
 const clear = require('clear')
-const chalk = require('chalk')
-const updateNotifier = require('update-notifier')
 
 // Requires: Libs
 const inquirer = require('../lib/inquirer')
@@ -14,46 +11,12 @@ const echo = require('../lib/echo')
 // Require: Files
 const pkg = require('../package.json')
 
-// Variables
-const labelFile = './labels.json'
-const helpText = `
-NAME
-    apinator - NodeJs API manager.
-
-SYNOPSIS
-    apinator [OPTIONS]
-
-DESCRIPTION
-    Easily create and maintain modular APIs for Node.js, based on express.
-
-OPTIONS
-    -c, --create
-        Launch interactive CLI to create a new API.
-
-EXAMPLES
-    Create a new API:
-        apinator create 
-`;
-
-// Meow CLI
-const cli = meow(helpText, {
-    description: false,
-    flags: {
-        'create': {
-            alias: 'c',
-            type: 'boolean'
-        },
-        'module': {
-            alias: 'm',
-            type: 'boolean'
-        }
-    }
-})
-
 /* --- Start --- */
 console.log()
 
-// Update Notifier
-updateNotifier({ pkg }).notify({ isGlobal: true })
+// If nothing happens, I'm assuming the user ran without flags
+echo.error('Missing arguments.')
+echo.tip('Use -h for help.')
+echo.info('Running version ' + pkg.version + '.', true)
 
 /* --- Functions --- */

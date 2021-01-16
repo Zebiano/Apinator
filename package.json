@@ -2,11 +2,8 @@
   "name": "apinator",
   "version": "0.0.3",
   "description": "Easily create and maintain modular APIs for Node.js, based on express",
-  "scripts": {
-    "dev": "nodemon index.js"
-  },
   "bin": {
-    "apinator": "bin/cli.js"
+    "apinator": "apinator.js"
   },
   "repository": {
     "type": "git",
@@ -27,8 +24,9 @@
   "dependencies": {
     "chalk": "^3.0.0",
     "clear": "^0.1.0",
-    "inquirer": "^7.1.0",
-    "meow": "^6.0.1",
-    "update-notifier": "^4.1.0"
+    "configstore": "^5.0.1",
+    "inquirer": "^7.3.3",
+    "meow": "^6.1.1",
+    "update-notifier": "^4.1.3"
   }
 }
