@@ -1,9 +1,22 @@
 # apinator
 Easily create and maintain modular APIs for Node.js, based on express
 
-## This is still under development! Only consider installing/using this package on version 1.0.0 and up.
+## `config`
+Config is created under the `package.json` file. Simply add `apinator` with it's options:
+```json
+"name": "Project name",
+"apinator": {
+    "overwrite": true
+}
+```
+* `overwrite`: Boolean. Overwrites files (in case they exist) when generating new ones.
 
-- [ ] TODO: Basically everything
-- [ ] TODO: add jest/unitytesting to it as well
-- [ ] TODO: Integrate documentation
-- [ ] TODO: whenever theres a route that doesnt exist, fall back to 404
+## Templates
+When creating new templates, use this as your code base
+```js
+exports.generate = function () {
+    return `
+// Your code in here    
+`.trim()
+}
+```
