@@ -14,8 +14,8 @@ app.use(express.json())
 module.exports = { app: app }
 
 // Require: Routes
-const routes = require('./routes.json')
-for (i of routes) app.use(i.path, require(i.file))
+const config = require('./config.json')
+for (i of config.routes) app.use(i.path, require(i.file))
 
 // Act depending on the environment
 switch (process.env.ENV) {

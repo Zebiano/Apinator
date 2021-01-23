@@ -22,11 +22,8 @@ DESCRIPTION
     Easily create and maintain modular APIs for Node.js, based on express.
 
 OPTIONS
-    -h, --help
-        Display this help page.
-
-    -n, --new
-        Launch interactive CLI to create a new API.
+    -h, --help  Display this help page.
+    -n, --new   Launch interactive CLI to create a new API.
 
 EXAMPLES
     Create a new API:
@@ -44,12 +41,8 @@ const meowCli = meow(helpText, {
             alias: 'h',
             type: 'boolean'
         },
-        'new': {
-            alias: 'n',
-            type: 'boolean'
-        },
-        'module': {
-            alias: 'm',
+        'verbose': {
+            alias: 'v',
             type: 'boolean'
         }
     }

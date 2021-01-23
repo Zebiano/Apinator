@@ -1,9 +1,10 @@
-exports.generate = function (projectName) {
+exports.generate = function () {
     return `
 // Require: Packages
 require('dotenv').config()
 
-// Require: APIs
-require('./${projectName}/server')
+// Require: Projects
+const projects = require('./projects.json')
+for (i of projects) require(i)
 `.trim()
 }
