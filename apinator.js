@@ -21,13 +21,17 @@ SYNOPSIS
 DESCRIPTION
     Easily create and maintain modular APIs for Node.js, based on express.
 
+apinator [new|create|foundation] ?<App>
+apinator app <name>
+apinator module <name> ?<App>
+
 OPTIONS
     -h, --help  Display this help page.
-    -n, --new   Launch interactive CLI to create a new API.
+    -v, --verbose   Display more info.
 
 EXAMPLES
     Create a new API:
-        apinator create 
+        apinator create <name>
 `;
 
 // Update Notifier

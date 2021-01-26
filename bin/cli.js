@@ -4,7 +4,9 @@ const ora = require('ora')
 
 // Requires: Libs
 const echo = require('../lib/echo')
-const generate = require('../lib/generate')
+
+// Require: Files
+const generate = require('../bin/generate')
 
 // Variables
 const config = new conf()
@@ -25,8 +27,9 @@ exports.main = async function (meow) {
     switch (meow.input[0]) {
         // Foundation
         case 'create':
+        case 'c':
         case 'new':
-        case 'foundation':
+        case 'n':
             // Variables
             let countExit = 0
             // Generate Foundation
@@ -42,13 +45,15 @@ exports.main = async function (meow) {
             break
         // App
         case 'app':
+        case 'a':
             // Generate App
             await generate.app(apinator, spinner, meow)
             break
         // Module
         case 'module':
+        case 'm':
             // Generate Module
-            await generate.module(apinator)
+            await generate.module(apinator, spinner, meow)
             break
         // If nothing happens, I'm assuming the user ran without flags
         default:
@@ -70,6 +75,7 @@ function createApinator(meow) {
 
     // Check if property exists, and if not, assign default values
     if (!object.overwrite) object.overwrite = false
+    if (!object.isGenerating) object.isGenerating = true
 
     // Return
     return object

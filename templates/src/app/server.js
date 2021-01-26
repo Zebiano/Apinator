@@ -15,7 +15,7 @@ module.exports = { app: app }
 
 // Require: Routes
 const config = require('./config.json')
-for (i of config.routes) app.use(i.path, require(i.file))
+for (i of config.routes) app.use(i.endpoint, require(i.file))
 
 // Act depending on the environment
 switch (process.env.ENV) {
